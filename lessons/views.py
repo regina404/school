@@ -28,18 +28,6 @@ class LessonsHome(DataMixin, ListView):
         return Lessons.objects.filter(is_published=True)
 
 
-# def index(request):
-#     posts =  Lessons.objects.all()
-#
-#     context = {
-#         'posts': posts,
-#         'menu': menu,
-#         'title': 'Главная страница',
-#         'cat_selected': 0,
-#     }
-#
-#     return render(request, 'lessons/index.html', context=context)
-
 def about(request):
     contact_list = Lessons.objects.all()
     paginator = Paginator(contact_list, 3)
@@ -63,17 +51,6 @@ class AddPage(LoginRequiredMixin, PermissionRequiredMixin, DataMixin, CreateView
         return dict(list(context.items()) + list(c_def.items()))
 
 
-# def addpage(request):
-#     if request.method == 'POST':
-#         form = AddPostForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             #print(form.cleaned_data)
-#             form.save()
-#             return redirect('home')
-#     else:
-#         form = AddPostForm()
-#     return render(request, 'lessons/addpage.html', {'form': form, 'menu': menu, 'title': 'Добавление урока'})
-
 def contact(request):
     return HttpResponse("Обратная связь")
 
@@ -82,25 +59,8 @@ def become_author(request):
     return HttpResponse("Стать репетитором")
 
 
-# def login(request):
-#     return HttpResponse("Авторизация")
-
-
 def pageNotFound(request, exception):
     return HttpResponseNotFound('<h1>Страница не найдена</h1>')
-
-
-# def show_post(request, post_slug):
-#     post = get_object_or_404(Lessons, slug=post_slug)
-#
-#     context = {
-#         'post': post,
-#         'menu': menu,
-#         'title': post.title,
-#         'cat_selected': post.cat_id,
-#     }
-#
-#     return render(request, 'lessons/post.html', context=context)
 
 class ShowPost(LoginRequiredMixin, DataMixin, DetailView):
     login_url = '/login/'
@@ -130,22 +90,6 @@ class LessonsCategory(DataMixin, ListView):
         c_def = self.get_user_context(title='Категория - ' + str(context['posts'][0].cat),
                                       cat_selected=context['posts'][0].cat_id)
         return dict(list(context.items()) + list(c_def.items()))
-
-
-# def show_category(request, cat_id):
-#     posts = Lessons.objects.filter(cat_id=cat_id)
-#
-#     if len(posts) == 0:
-#         raise Http404()
-#
-#     context = {
-#         'posts': posts,
-#         'menu': menu,
-#         'title': 'Отображение по рубрикам',
-#         'cat_selected': cat_id,
-#     }
-#
-#     return render(request, 'lessons/index.html', context=context)
 
 
 class RegisterUser(DataMixin, CreateView):

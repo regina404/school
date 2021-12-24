@@ -19,15 +19,16 @@ a:hover {
 img {max-width: 600px; height: auto;}
 
 img.img-article-left {
-	max-width: 300px;
+	max-width: 600px;
 	height: auto;
-	float: left;
 	padding: 0 10px 10px 0;
 }
 
 img.img-article-left.thumb {
-	max-width: 150px;
+	max-width: 350px;
 	height: auto;
+	display:block;
+	margin:0 auto;
 }
 
 p.link-read-post {
@@ -44,7 +45,7 @@ p.link-read-post a {
 div.article-panel {
     background: #eee;
     padding: 5px 10px 5px 10px;
-    box-sizing border-box;
+    box-sizing: border-box;
     overflow: hidden;
     color: #555;
 }
