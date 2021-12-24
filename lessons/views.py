@@ -36,6 +36,13 @@ def about(request):
     page_obj = paginator.get_page(page_number)
     return render(request, 'lessons/about.html', {'page_obj': page_obj, 'menu': menu, 'title': 'О школе'})
 
+def become_tutor(request):
+    contact_list = Lessons.objects.all()
+    paginator = Paginator(contact_list, 3)
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'lessons/become_tutor.html', {'page_obj': page_obj, 'menu': menu, 'title': 'О школе'})
 
 class AddPage(LoginRequiredMixin, PermissionRequiredMixin, DataMixin, CreateView):
     permission_required = "lessons.change_lessons"
@@ -60,11 +67,6 @@ def calculators(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     return render(request, 'lessons/calculators.html', {'page_obj': page_obj, 'menu': menu, 'title': 'Калькуляторы'})
-
-def become_author(request):
-    return HttpResponse("Стать репетитором")
-
-
 
 
 def pageNotFound(request, exception):
