@@ -8,7 +8,7 @@
     padding: 15px;
     position: relative;
     top: 2vh;
-    left:55vh;
+    left: 42vh;
 }
 .item {
     color: #fff;
@@ -49,7 +49,7 @@
     display: table;
     width: auto;
     margin-top: 5vh;
-    margin-left: 75vh;
+    margin-left: 64vh;
     text-align: center;
     letter-spacing: 2px;
   }
