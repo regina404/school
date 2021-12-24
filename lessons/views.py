@@ -51,9 +51,15 @@ class AddPage(LoginRequiredMixin, PermissionRequiredMixin, DataMixin, CreateView
         return dict(list(context.items()) + list(c_def.items()))
 
 
-def contact(request):
-    return HttpResponse("Обратная связь")
 
+
+def calculators(request):
+    contact_list = Lessons.objects.all()
+    paginator = Paginator(contact_list, 3)
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'lessons/calculators.html', {'page_obj': page_obj, 'menu': menu, 'title': 'Калькуляторы'})
 
 def become_author(request):
     return HttpResponse("Стать репетитором")
