@@ -59,8 +59,11 @@ def become_author(request):
     return HttpResponse("Стать репетитором")
 
 
+
+
 def pageNotFound(request, exception):
     return HttpResponseNotFound('<h1>Страница не найдена</h1>')
+
 
 class ShowPost(LoginRequiredMixin, DataMixin, DetailView):
     login_url = '/login/'
