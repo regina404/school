@@ -7,7 +7,57 @@
 * Разработать удобную онлайн платформу для обучения математики , с возможностью математических тренировок каждый день и с постоянной поддержкой от репетиторов,которые будут завлечены в это 
 
 ------------
-# Описание работы проекта поетапно 
+# Структура проекта
+
+- school  
+  - school  (Главный файл с настройками сервера)
+    -  init__.py
+    -  product.js
+    - __pycache__
+    - asgi.py
+    - settings.py
+    - urls.py
+    - wsgi.py
+
+  - lessons    
+    - __init__.py
+    - _pycache__
+    - admin.py
+    - apps.py
+    - forms.py
+    - migrations
+    - models.py
+    - permissions.py
+    - static 
+       - lessons
+         - css
+         - js
+         - images
+    - templates (html)   
+      - lessons
+    - templatetags  
+        - lessons_tags.py
+    - tests.py      
+    - urls.py
+    - utils.py
+    - views.py
+
+   - media
+     - photo   
+  
+
+  - db.sqlite3
+
+  - node_modules
+   - manage.py
+
+------------
+# Доступно
+------------
+
+# Планы
+------------
+# Описание работы проекта поэтапно 
 
 * На сайте присутствует форма Регистрации, мы видим проверку паролей с помощью валидации формы. После регистрации пользователь автоматически входит в свой аккаунт.
 
