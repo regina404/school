@@ -8,6 +8,7 @@ urlpatterns = [
     path('addpage/', AddPage.as_view(), name='add_page'),
     path('calculators/', calculators, name='calculators'),
     path('become_tutor/', become_tutor , name='become_tutor'),
+    path('test/', test , name='test'),
     path('login/', LoginUser.as_view(), name='login'),
     path('logout/', logout_user, name='logout'),
     path('register/', RegisterUser.as_view(), name='register'),

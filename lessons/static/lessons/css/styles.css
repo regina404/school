@@ -628,3 +628,31 @@ grid-row-gap: 0px;
     padding:5px;
     line-height: 1.75;
 }
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 0;
+    padding: 30px 60px;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 20px;
+    transition: all ease 0.3s;
+    cursor: pointer;
+    text-decoration:none;
+}
+A {
+    text-decoration:none;
+}
+.button_color {
+    background: #eb633d;
+    color: #fff;
+    text-decoration:none;
+    text-align:center;
+}
+
+  .center {
+    text-align: center;
+  }
