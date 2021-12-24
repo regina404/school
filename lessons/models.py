@@ -20,8 +20,8 @@ class Lessons(models.Model):
         return reverse('post', kwargs={'post_slug': self.slug})
 
     class Meta:
-        verbose_name = 'Классы'
-        verbose_name_plural = 'Классы'
+        verbose_name = 'Темы'
+        verbose_name_plural = 'Темы'
         ordering = ['id']
 
 
