@@ -459,7 +459,7 @@ ul.lang-list li a:hover {color: #aaf065;}
 }
 
 .t-cover__carrier {
-    height: 700px;
+    height: 600px;
     width: 100%;
     background-size: cover;
     -moz-background-size: cover;
@@ -475,7 +475,7 @@ ul.lang-list li a:hover {color: #aaf065;}
     -moz-transform: unset;
 }
 
-.t-container{
+.t-container-2{
    background-image: linear-gradient(to top, rgba(64,26,0,0.80),rgba(6,17,31,0.80)),url(https://thumb.tildacdn.com/tild6239-3634-4266-b663-613936613332/-/format/webp/5.jpg);
 
 }
@@ -486,7 +486,7 @@ ul.lang-list li a:hover {color: #aaf065;}
 
 .t-descr_lg {
     font-size: 22px;
-    line-height: 1.55;
+    line-height: 2;
 }
 
 .t-cover {
@@ -495,7 +495,6 @@ ul.lang-list li a:hover {color: #aaf065;}
 
 .t032__wrapper {
     padding-top: 42px;
-    padding-bottom: 42px;
 }
 
 .t-title_md {
@@ -508,3 +507,65 @@ ul.lang-list li a:hover {color: #aaf065;}
 .st {
 text-align:center;
 }
+
+.t-rec_pt_195 {
+    padding-top: 195px;
+}
+
+.t-container, .t-container_10, .t-container_8 {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    width: 100%;
+}
+.t-container:after, .t-container:before, .t-container_100:after, .t-container_100:before, .t-container_10:after, .t-container_10:before, .t-container_8:after, .t-container_8:before {
+    display: table;
+    content: " ";
+}
+
+.t-col {
+    display: inline;
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 100%;
+}
+
+.t-col_12 {
+    max-width: 1160px;
+}
+
+.t502 .t-section__topwrapper {
+    margin-bottom: 105px;
+}
+
+.t-align_center {
+    text-align: center;
+}
+
+.t502 .t-section__title {
+    margin-bottom: 40px;
+}
+
+.t-title_xs {
+    font-size: 38px;
+    line-height: 1.23;
+}
+
+.t-title {
+    font-family: 'Roboto',Arial,sans-serif;
+    font-weight: 600;
+    color: #000;
+}
+
+.t-clear, .t-container:after, .t-container_100:after, .t-container_10:after, .t-container_8:after {
+    clear: both;
+}
+
+.t-container {
+    max-width: 960px;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
