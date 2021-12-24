@@ -1,0 +1,55 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    background-color: #212121;
+    border-radius: 10px;
+    max-width: 450px;
+    font-family: "Calibri";
+    padding: 15px;
+    position: relative;
+    top: 2vh;
+    left:55vh;
+}
+.item {
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    cursor: pointer;
+}
+.input {
+    min-height: 60px;
+    height: auto;
+    padding: 5px 20px;
+    grid-column: 1/-1;
+    font-size: 40px;
+    justify-content: flex-end;
+}
+.upper {
+    font-size: 20px;
+    margin-left: 3px;
+    margin-top: -20px;
+}
+
+.clean, .back, .percent, .divide, .mul, .sub, .add {
+    color: #ff7c01;
+}
+
+.equal { 
+    background-color: #ff7c01;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+
+.titleK h3 {
+    display: table;
+    width: auto;
+    margin-top: 5vh;
+    margin-left: 75vh;
+    text-align: center;
+    letter-spacing: 2px;
+  }
