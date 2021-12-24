@@ -4,7 +4,7 @@ from .models import *
 
 menu = [{'title': "О школе", 'url_name': 'about'},
         {'title': "Добавить урок", 'url_name': 'add_page'},
-        {'title': "Обратная связь", 'url_name': 'contact'},
+        {'title': "Калькуляторы", 'url_name': 'contact'},
         {'title': "Стать репетитором", 'url_name': 'become_author'},
 ]
 
