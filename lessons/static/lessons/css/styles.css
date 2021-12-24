@@ -429,3 +429,82 @@ ul.lang-list li a:hover {color: #aaf065;}
 .list-pages .page-num-selected:hover {
 	box-shadow: none; 
 }
+
+
+.t-cover__wrapper {
+    display: table-cell;
+}
+
+.t-cover {
+
+    text-align: center;
+}
+.t032__title {
+    color: #fff;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.t032__descr {
+    color: #fff;
+    margin-top: 43px;
+    padding: 0 50px;
+    margin-bottom: 0;
+}
+
+.t-descr {
+    font-family: 'Roboto',Arial,sans-serif;
+    font-weight: 300;
+    color: #000;
+}
+
+.t-cover__carrier {
+    height: 700px;
+    width: 100%;
+    background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    background-attachment: fixed;
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+    -moz-transform: unset;
+}
+
+.t-container{
+   background-image: linear-gradient(to top, rgba(64,26,0,0.80),rgba(6,17,31,0.80)),url(https://thumb.tildacdn.com/tild6239-3634-4266-b663-613936613332/-/format/webp/5.jpg);
+
+}
+.t-cover__carrier.loaded {
+    opacity: 1;
+    transition: opacity .7s;
+}
+
+.t-descr_lg {
+    font-size: 22px;
+    line-height: 1.55;
+}
+
+.t-cover {
+    text-align: center;
+}
+
+.t032__wrapper {
+    padding-top: 42px;
+    padding-bottom: 42px;
+}
+
+.t-title_md {
+    line-height: 1.23;
+}
+
+#allrecords strong {
+    font-weight: 700;
+}
+.st {
+text-align:center;
+}

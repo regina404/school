@@ -1,23 +1,41 @@
 {% extends 'lessons/header.html' %}
 
 {% block content %}
-{% block mainmenu %}
-		<div class="header">
-			<ul id="mainmenu" class="mainmenu">
-			<li class="logo"><a href="{% url 'home' %}"><div class="logo"></div></a></li>
-{% for m in menu %}
-			<li><a href="{% url m.url_name %}">{{m.title}}</a></li>
-{% endfor %}
-				{% if request.user.is_authenticated %}
-				<li class="last"> {{user.username}} | <a href="{% url 'logout' %}">Выйти</a></li>
-				{% else %}
-				<li class="last"><a href="{% url 'register' %}">Регистрация</a> | <a href="{% url 'login' %}">Войти</a></li>
-				{% endif %}
-			</ul>
-			<div class="clear"></div>
+
+<div class="t-container">
+	<div class="t-cover__wrapper t-valign_middle" style="height:650px;">
+		<div class="t032"> <div class="t032__wrapper" data-hook-content="covercontent">
+			<div class="t032__title t-title t-title_md" style="font-size:42px;" field="title">
+				<div style="font-size:52px;" data-customstyle="yes">Про онлайн школу</div>
+			</div> <div class="t-row">
+			<div class="t-col t-col_2 t-prefix_5">
+				<div class="t032__line" style="">
+
+				</div>
+			</div>
 		</div>
-{% endblock mainmenu %}
-<h1>xdfcgvhb</h1>
+			<div class="t-row">
+				<div class="t-col t-col_10 t-prefix_1">
+					<div class="t032__descr t-descr t-descr_lg" style="" field="descr">
+						<div style="font-size:22px; color:white;" data-customstyle="yes">Наша команда - це молоді, успішні студенти,
+							які склали ЗНО на 190+ і вчаться зараз у кращих вузах України. Ми знаємо, як ефективно
+							працювати в умовах сучасності, та розуміємо , що треба виходити за межі шкільної програми
+							і як прокачати мозок вашої дитини. Адже це не секрет, що математичний склад розуму можно
+							розвити.<br>Ми зможемо покращити знання дитини з будь-якого віку або візьмемо з нуля. Бо як
+							каже народна мудрість : «Без шліфування і алмаз не блищить». Ми знаємо підводні камені
+							ЗНО і чітко розуміємо , як їх долати. Ми не збираємося розповідати страшилки шкільних
+							вчителів про ЗНО, бо ми на одній хвилі з вашими діточками.<br><strong class="st">Тож ми чекаємо на
+								вас і гарантуємо результат!</strong>
+							<strong></strong><strong></strong><strong></strong><br>
+						</div>
+					</div>
+				</div>
+			</div>
+			<span class="space"></span>
+		</div>
+		</div>
+	</div>
+</div>
 
 
 {% endblock %}
