@@ -1,6 +1,6 @@
 # Онлайн школа математики 
 Над проектом работают: 
-+ [Regina.Slusar](https://github.com/regina404) -студентка группы IB-93 123 специальность 
++ [Regina.Sliusar](https://github.com/regina404) -студентка группы IB-93 123 специальность 
 + [Veronica.Shukhman](https://github.com/nikelyandjelo) - студентка группы IP-05 121 специальность 
  ---
 ## Цель нашего проекта 
