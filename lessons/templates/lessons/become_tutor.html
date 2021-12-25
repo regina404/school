@@ -1,16 +1,15 @@
 {% extends 'lessons/header.html' %}
 
-
 {% block content %}
-   <h1>add tutor</h1>
+   <h1>СТАТЬ РЕПИТИТОРОМ!</h1>
    <br/><br/>
    {% if submitted %}
-      Вы уже заполнили форму!
+      <p>Форма успешно заполнена!</p>
    {% else %}
     <form action="" method=POST>
        {% csrf_token %}
        {{ form.as_p }}
-       <input type="submit" value="Submit" class="btn btn-success">
+       <input type="submit" value="Submit" class="contact form">
     </form>
     {% endif %}
 

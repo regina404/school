@@ -38,6 +38,8 @@ def about(request):
     page_obj = paginator.get_page(page_number)
     return render(request, 'lessons/about.html', {'page_obj': page_obj, 'menu': menu, 'title': 'О школе'})
 
+
+
 def test(request):
     contact_list = Lessons.objects.all()
     paginator = Paginator(contact_list, 3)
@@ -55,9 +57,9 @@ def become_tutor(request):
             return HttpResponseRedirect('/become_tutor?submitted=True')
     else:
         form = ContactForm
-        if submitted in request.GET:
+        if 'submitted' in request.GET:
             submitted = True
-    return render(request, 'lessons/become_tutor.html', {'form':form, 'submitted':submitted})
+    return render(request, 'lessons/become_tutor.html', {'form':form, 'submitted':submitted, 'menu': menu, 'title': 'Стать репетитором'})
 
 
 
