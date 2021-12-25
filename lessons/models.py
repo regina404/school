@@ -48,5 +48,9 @@ class UserDataAdd(models.Model):
     experience = models.CharField(max_length=255, verbose_name="Стаж")
     sity = models.CharField(max_length=255, verbose_name="город")
 
+    class Meta:
+        verbose_name = 'Темы'
+        verbose_name_plural = 'Данные с формы'
+
     def __str__(self):
         return self.name

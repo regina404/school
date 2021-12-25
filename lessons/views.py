@@ -2,7 +2,7 @@ from django.contrib.auth import logout, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
 from django.core.paginator import Paginator
-from django.http import HttpResponse, HttpResponseNotFound, Http404
+from django.http import HttpResponse, HttpResponseNotFound, Http404, HttpResponseRedirect
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView
@@ -47,8 +47,17 @@ def test(request):
     return render(request, 'lessons/test.html', {'page_obj': page_obj, 'menu': menu, 'title': 'Тест'})
 
 def become_tutor(request):
-    form = ContactForm
-    return render(request, 'lessons/become_tutor.html', {'form':form})
+    submitted = False
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/become_tutor?submitted=True')
+    else:
+        form = ContactForm
+        if submitted in request.GET:
+            submitted = True
+    return render(request, 'lessons/become_tutor.html', {'form':form, 'submitted':submitted})
 
 
 

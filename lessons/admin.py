@@ -17,6 +17,13 @@ class CategoryAdmin(admin.ModelAdmin):
     search_fields = ('name',)
     prepopulated_fields = {"slug": ("name",)}
 
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ('name', 'phone_number', 'emeil', 'experience', 'sity')
+    list_display_links = ('name', 'phone_number')
+    search_fields = ('name',)
+
+
 
 admin.site.register(Lessons, LessonsAdmin)
 admin.site.register(Category, CategoryAdmin)
+admin.site.register(UserDataAdd, ContactAdmin)

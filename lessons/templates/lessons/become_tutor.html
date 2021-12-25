@@ -3,11 +3,15 @@
 
 {% block content %}
    <h1>add tutor</h1>
-<br/><br/>
-<form action="" method=POST>
-   {% csrf_token %}
-   {{ form.as_p }}
-   <input type="submit" value="Submit" class="btn btn-success">
-</form>
+   <br/><br/>
+   {% if submitted %}
+      Вы уже заполнили форму!
+   {% else %}
+    <form action="" method=POST>
+       {% csrf_token %}
+       {{ form.as_p }}
+       <input type="submit" value="Submit" class="btn btn-success">
+    </form>
+    {% endif %}
 
 {% endblock %}

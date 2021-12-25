@@ -46,6 +46,6 @@ class LoginUserForm(AuthenticationForm):
 class ContactForm(ModelForm):
     class Meta:
         model = UserDataAdd
-        fields =('name', 'phone_number', 'emeil', 'experience', 'experience', 'sity')
+        fields =('name', 'phone_number', 'emeil', 'experience', 'sity')
 
 
