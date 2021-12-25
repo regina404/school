@@ -475,10 +475,6 @@ ul.lang-list li a:hover {color: #aaf065;}
     -moz-transform: unset;
 }
 
-.t-container-2{
-   background-image: linear-gradient(to top, rgba(64,26,0,0.80),rgba(6,17,31,0.80)),url(https://thumb.tildacdn.com/tild6239-3634-4266-b663-613936613332/-/format/webp/5.jpg);
-
-}
 .t-cover__carrier.loaded {
     opacity: 1;
     transition: opacity .7s;
@@ -656,3 +652,12 @@ A {
   .center {
     text-align: center;
   }
+
+ .about{
+    margin:20px;
+ }
+
+#aboutButton {
+    margin: 0px 0px 100px 350px;
+    width: 30%;
+}

@@ -1,15 +1,36 @@
 {% extends 'lessons/header.html' %}
+{% load static %}
 
 {% block content %}
    <h1>СТАТЬ РЕПИТИТОРОМ!</h1>
+    <img src="{% static "lessons/images/flex1.png" %}" alt="My image">
+
    <br/><br/>
    {% if submitted %}
       <p>Форма успешно заполнена!</p>
    {% else %}
     <form action="" method=POST>
        {% csrf_token %}
-       {{ form.as_p }}
-       <input type="submit" value="Submit" class="contact form">
+         <label class="input input_name">
+                {{ form.name }}
+            </label>
+            <label class="input input_phone">
+                {{ form.phone_number }}
+            </label>
+            <label class="input input_mail">
+                {{ form.emeil }}
+            </label>
+            <label class="input input_expirience">
+                {{ form.experience }}
+            </label>
+            <label class="input input__sity">
+                {{ form.sity }}
+            </label>
+
+            <div class="popup__explanation">
+                Всі поля обов'язкові для заповнення
+            </div>
+       <input type="submit" value="Отправить" class="button button_color popup-button">
     </form>
     {% endif %}
 

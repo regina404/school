@@ -1,4 +1,5 @@
 {% extends 'lessons/header.html' %}
+{% load static %}
 
 {% block content %}
 <div class="t502">
@@ -99,8 +100,15 @@
 		</div>
 	</div>
 </div>
+<style>
+	.t-container-2{
+	background-image: linear-gradient(to top, rgba(64,26,0,0.80),rgba(6,17,31,0.80)),url({% static "images/flex1.png" %});
+	background-repeat: no-repeat;
+	background-size: cover;
 
-<a class="button button_color popuper" href="{% url 'test' %}" > Пройти тестування
+}
+</style>
+<a class="button button_color popuper " id="aboutButton" href="{% url 'test' %}" > Пройти тестування
 </a>
 <div class="t-container-2" >
 	<div class="t-cover__wrapper t-valign_middle" style="height:650px;">

@@ -47,5 +47,12 @@ class ContactForm(ModelForm):
     class Meta:
         model = UserDataAdd
         fields =('name', 'phone_number', 'emeil', 'experience', 'sity')
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'input input_name', 'placeholder': 'Имя '}),
+            'phone_number': forms.TextInput(attrs={'class': 'input input_phone', 'placeholder': 'Телефон '}),
+            'emeil': forms.TextInput(attrs={'class': 'input input_mail', 'placeholder': 'Ваша почта'}),
+            'experience': forms.TextInput(attrs={'class': 'input input_expirience', 'placeholder': 'Ваш стаж(цифра)'}),
+            'sity': forms.TextInput(attrs={'class': 'input input_sity', 'placeholder': 'Город'}),
+        }
 
 
