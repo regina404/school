@@ -165,7 +165,7 @@ label.input::after{
 	height: 24px;
 	position: absolute;
 	top: 50%;
-	right: 20px;
+	right: 35px;
 	transform: translate(0,-50%);
 }
 
@@ -199,20 +199,12 @@ label.input.input__site::before{
 
 
 
-label.input.error::after{
-	display: block;
-	background: url('../images/alert.svg') center center no-repeat;
-}
 
 label.input.error input{
 	border-color: #F8C7D3;
 }
 
-label.input.success::after{
-	display: block;
-	background: url('../images/success.svg') center center no-repeat;
 
-}
 
 
 .button{
@@ -306,7 +298,8 @@ label.input.success::after{
     display: block;
     max-width: 20%;
     margin-bottom: 15px;
-    border-radius: 100px; /* Радиус скругления */
-    border: 3px solid green; /* Параметры рамки */
-    box-shadow: 0 0 7px #666; /* Параметры тени */
+    border-radius: 100px;
+    border: 3px solid #0059b2;
+    box-shadow: 0 0 7px #666;
 }
+

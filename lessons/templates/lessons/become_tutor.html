@@ -2,17 +2,25 @@
 {% load static %}
 
 {% block content %}
-   <h1>СТАТЬ РЕПИТИТОРОМ!</h1>
 
-
-   <br/><br/>
    {% if submitted %}
       <p>Форма успешно заполнена!</p>
    {% else %}
+        <style>
+            label.input.error::after{
+	           display: block;
+	           background: url({% static "lessons/images/alert.svg" %}) center center no-repeat;
+            }
+            label.input.success::after{
+	           display: block;
+	           background: url({% static "lessons/images/success.svg" %}) center center no-repeat;
+            }
+        </style>
         <div class="popup-block">
         <div class="popup-img"> <img src="{% static "lessons/images/flex1.png" %}" alt="My image"></div>
         <div class="popup-title">Прієднуйтесь до нас!</div>
     <form action="" method=POST>
+        {% csrf_token %}
          <label class="input input_name">
                 {{ form.name }}
             </label>
