@@ -23,13 +23,13 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 71%;
+	width: 80%;
 	max-width: 575px;
 	background: #fff;
 	padding: 40px 50px;
 	border-radius: 40px;
 	position: relative;
-    left: 25vw;
+    left: 10vw;
 }
 
 .popup_close{
@@ -126,7 +126,7 @@ label.input + label.input{
 
 label.input input,
 label.input textarea{
-	width: 50%;
+	width: 100%;
 	font-family: 'Montserrat', sans-serif;
 	font-size: 16px;
 	line-height: 100%;
@@ -221,7 +221,7 @@ label.input.success::after{
 	justify-content: center;
 	position: relative;
 	top: 0;
-	width: 50%;
+	width: 80%;
 	padding: 15px 60px;
 	font-size: 20px;
 	font-weight: 500;
@@ -229,6 +229,7 @@ label.input.success::after{
 	transition: all ease 0.3s;
 	cursor: pointer;
     margin-top:15px;
+    margin-left: 45px;
 }
 
 .button svg{
@@ -299,4 +300,13 @@ label.input.success::after{
 	margin-top: 40px;
 	margin-bottom: 0;
 	box-shadow: 0 10px 10px rgba(0,0,0,0.12);
+}
+
+.popup-img img {
+    display: block;
+    max-width: 20%;
+    margin-bottom: 15px;
+    border-radius: 100px; /* Радиус скругления */
+    border: 3px solid green; /* Параметры рамки */
+    box-shadow: 0 0 7px #666; /* Параметры тени */
 }

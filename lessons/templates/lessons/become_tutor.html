@@ -3,14 +3,16 @@
 
 {% block content %}
    <h1>СТАТЬ РЕПИТИТОРОМ!</h1>
-    <img src="{% static "lessons/images/flex1.png" %}" alt="My image">
+
 
    <br/><br/>
    {% if submitted %}
       <p>Форма успешно заполнена!</p>
    {% else %}
+        <div class="popup-block">
+        <div class="popup-img"> <img src="{% static "lessons/images/flex1.png" %}" alt="My image"></div>
+        <div class="popup-title">Прієднуйтесь до нас!</div>
     <form action="" method=POST>
-       {% csrf_token %}
          <label class="input input_name">
                 {{ form.name }}
             </label>
@@ -26,12 +28,9 @@
             <label class="input input__sity">
                 {{ form.sity }}
             </label>
-
-            <div class="popup__explanation">
-                Всі поля обов'язкові для заповнення
+            <input type="submit" value="Отправить" class="button button_color popup-button">
+            </form>
             </div>
-       <input type="submit" value="Отправить" class="button button_color popup-button">
-    </form>
     {% endif %}
 
 {% endblock %}
