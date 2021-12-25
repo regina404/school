@@ -8,10 +8,12 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from .permissions import AuthorPermissionsMixin
-
+from django.views import View
 from .forms import *
 from .models import *
 from .utils import *
+from django.shortcuts import render
+from .forms import ContactForm
 
 
 class LessonsHome(DataMixin, ListView):
@@ -45,12 +47,8 @@ def test(request):
     return render(request, 'lessons/test.html', {'page_obj': page_obj, 'menu': menu, 'title': 'Тест'})
 
 def become_tutor(request):
-    contact_list = Lessons.objects.all()
-    paginator = Paginator(contact_list, 3)
-
-    page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)
-    return render(request, 'lessons/become_tutor.html', {'page_obj': page_obj, 'menu': menu, 'title': 'Стать репетитором'})
+    form = ContactForm
+    return render(request, 'lessons/become_tutor.html', {'form':form})
 
 
 
@@ -66,7 +64,6 @@ class AddPage(LoginRequiredMixin, PermissionRequiredMixin, DataMixin, CreateView
         context = super().get_context_data(**kwargs)
         c_def = self.get_user_context(title="Добавление урока")
         return dict(list(context.items()) + list(c_def.items()))
-
 
 
 
@@ -145,3 +142,4 @@ class LoginUser(DataMixin, LoginView):
 def logout_user(request):
     logout(request)
     return redirect('login')
+

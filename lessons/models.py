@@ -41,6 +41,12 @@ class Category(models.Model):
         ordering = ['id']
 
 
+class UserDataAdd(models.Model):
+    name = models.CharField(max_length=255, verbose_name="Имя")
+    phone_number = models.CharField(max_length=255,verbose_name="Номер телефона")
+    emeil = models.EmailField(max_length=255, verbose_name="Эмеил")
+    experience = models.CharField(max_length=255, verbose_name="Стаж")
+    sity = models.CharField(max_length=255, verbose_name="город")
 
-
-
+    def __str__(self):
+        return self.name
