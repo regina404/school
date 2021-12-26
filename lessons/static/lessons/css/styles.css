@@ -724,19 +724,38 @@ A {
 }
 
 #map {
-    width: 600px;
-    height: 400px;
+    width: 700px;
+    height: 500px;
     margin-left: 15vw;
     margin-top:30;
 
 }
 
-.leaflet-container .leaflet-control-attribution, .leaflet-container .leaflet-control-scale {
-    visibility: hidden;
+
+#distance, #summarydist, #summarytime{
+    margin: 20px 20vw;
+    color: black;
 }
 
-#distance{
-    text-align: center;
-    margin: 20px 10px;
-    color: black;
+.leaflet-routing-alt, .leaflet-routing-geocoders, .leaflet-routing-error {
+    padding: 6px;
+    margin-top: 2px;
+    margin-bottom: 6px;
+    border-bottom: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+    transition: all 0.2s ease;
+}
+
+.leaflet-routing-alt{
+    height:100px;
+}
+
+.leaflet-routing-container {
+    position: relative;
+    top:350px;
+}
+.leaflet-bottom {
+    display: none;
+
 }

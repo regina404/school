@@ -303,3 +303,12 @@ label.input.error input{
     box-shadow: 0 0 7px #666;
 }
 
+.leaflet-routing-alt, .leaflet-routing-geocoders, .leaflet-routing-error {
+    padding: 6px;
+    margin-top: 0px;
+    margin-bottom: 2px;
+    border-bottom: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+    transition: all 0.2s ease;
+}
