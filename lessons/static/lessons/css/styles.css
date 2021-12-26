@@ -759,3 +759,8 @@ A {
     display: none;
 
 }
+
+.teacher{
+    display: flex;
+    flex-direction: column;
+}

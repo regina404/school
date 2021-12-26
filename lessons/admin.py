@@ -22,8 +22,12 @@ class ContactAdmin(admin.ModelAdmin):
     list_display_links = ('name', 'phone_number')
     search_fields = ('name',)
 
-
+class TeacherAdmin(admin.ModelAdmin):
+    list_display = ('nameOfTeacher',  'nameOfStudent', 'emeilOfTeacher', 'cost', 'numOfLessons')
+    list_display_links = ('nameOfTeacher',  'nameOfStudent', )
+    search_fields = ('nameOfTeacher',)
 
 admin.site.register(Lessons, LessonsAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(UserDataAdd, ContactAdmin)
+admin.site.register(teacherExcel, TeacherAdmin)

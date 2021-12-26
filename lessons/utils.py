@@ -6,6 +6,7 @@ menu = [{'title': "О школе", 'url_name': 'about'},
         {'title': "Добавить урок", 'url_name': 'add_page'},
         {'title': "Калькуляторы", 'url_name': 'calculators'},
         {'title': "Стать репетитором", 'url_name': 'become_tutor'},
+        {'title': "Для учителя", 'url_name': 'for_teacher'},
 ]
 
 class DataMixin:

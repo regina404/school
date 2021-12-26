@@ -62,6 +62,19 @@ def become_tutor(request):
     return render(request, 'lessons/become_tutor.html', {'form':form, 'submitted':submitted, 'menu': menu, 'title': 'Стать репетитором'})
 
 
+def for_teacher(request):
+    submitted = False
+    if request.method == "POST":
+        form = forTeachers(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/for_teacher?submitted=True')
+    else:
+        form = forTeachers
+        if 'submitted' in request.GET:
+            submitted = True
+    return render(request, 'lessons/for_teacher.html', {'form':form, 'submitted':submitted, 'menu': menu, 'title': 'Для учителя'})
+
 
 class AddPage(LoginRequiredMixin, PermissionRequiredMixin, DataMixin, CreateView):
     permission_required = "lessons.change_lessons"

@@ -54,3 +54,17 @@ class UserDataAdd(models.Model):
 
     def __str__(self):
         return self.name
+
+class teacherExcel(models.Model):
+    nameOfTeacher = models.CharField(max_length=255, verbose_name="Ваше Имя")
+    nameOfStudent = models.CharField(max_length=255,verbose_name="Имя ученика")
+    emeilOfTeacher = models.EmailField(max_length=255, verbose_name="Ваша почта")
+    cost = models.BigIntegerField( verbose_name="Стоимость занятия за 45 мин")
+    numOfLessons = models.BigIntegerField(verbose_name="Количество уроков")
+
+    class Meta:
+        verbose_name = 'Данные по детям'
+        verbose_name_plural = 'Данные с формы'
+
+    def __str__(self):
+        return self.name
