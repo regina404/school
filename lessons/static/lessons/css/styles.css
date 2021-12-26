@@ -734,3 +734,9 @@ A {
 .leaflet-container .leaflet-control-attribution, .leaflet-container .leaflet-control-scale {
     visibility: hidden;
 }
+
+#distance{
+    text-align: center;
+    margin: 20px 10px;
+    color: black;
+}
