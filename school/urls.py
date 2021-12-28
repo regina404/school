@@ -9,6 +9,7 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('lessons.urls')),
+    path('', include('quizes.urls')),
 ]
 
 if settings.DEBUG:
