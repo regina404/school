@@ -1,4 +1,4 @@
-console.log('hello world quiz')
+
 const url = window.location.href
 
 const quizBox = document.getElementById('quiz-box')
@@ -75,11 +75,11 @@ $.ajax({
 
     },
     error: function(error){
-        console.log(error)
     }
 })
 
 const quizForm = document.getElementById('quiz-form')
+const timeOut = document.getElementById('timer-box')
 const csrf = document.getElementsByName('csrfmiddlewaretoken')
 
 const sendData = () => {
@@ -102,11 +102,9 @@ const sendData = () => {
         data: data,
         success: function(response){
             const results = response.results
-            console.log(results)
             quizForm.classList.add('not-visible')
-
+            timeOut.classList.add('not-visible')
             scoreBox.innerHTML = `${response.passed ? 'Congratulations! ' : 'Ups..:( '}Your result is ${response.score.toFixed(2)}%`
-
             results.forEach(res=>{
                 const resDiv = document.createElement("div")
                 for (const [question, resp] of Object.entries(res)){
@@ -137,7 +135,6 @@ const sendData = () => {
             })
         },
         error: function(error){
-            console.log(error)
         }
     })
 }
