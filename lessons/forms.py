@@ -2,11 +2,10 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
-
 from .models import *
-from django.forms import ModelForm, inlineformset_factory
+from django.forms import ModelForm, modelformset_factory
 from .models import UserDataAdd
-
+from django.forms.models import inlineformset_factory
 class AddPostForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -54,17 +53,3 @@ class ContactForm(ModelForm):
             'experience': forms.TextInput(attrs={'class': 'input input_expirience', 'placeholder': 'Ваш стаж(цифра)'}),
             'sity': forms.TextInput(attrs={'class': 'input input_sity', 'placeholder': 'Город'}),
         }
-
-class forTeachers(ModelForm):
-    class Meta:
-        model = teacherExcel
-        fields =('nameOfTeacher',  'nameOfStudent', 'emeilOfTeacher', 'cost', 'numOfLessons')
-        widgets = {
-            'nameOfTeacher': forms.TextInput(attrs={'placeholder': 'Ваше Имя'}),
-            'nameOfStudent': forms.TextInput(attrs={'placeholder': 'Имя ученика'}),
-            'emeilOfTeacher': forms.TextInput(attrs={'placeholder': 'Ваша почта'}),
-            'cost': forms.TextInput(attrs={'placeholder': 'Стоимость занятия за 45 мин'}),
-            'numOfLessons': forms.TextInput(attrs={'placeholder': 'Количество уроков'}),
-        }
-
-

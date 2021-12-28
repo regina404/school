@@ -2,33 +2,20 @@
 {% load static %}
 
 {% block content %}
-
-   {% if submitted %}
-      <p>Данные отправлены!</p>
-   {% else %}
-  <div class = "teacher">
-    <form action="" method=POST>
+{% if message %}
+<p>{{ message }}</p>
+{% endif %}
+<div style='margin-top:30px;'>
+    <form action='.' method="POST">
         {% csrf_token %}
-         <label>
-                {{ form.nameOfTeacher }}
-            </label>
-            <label>
-                {{ form.nameOfStudent }}
-            </label>
-            <label>
-                {{ form.emeilOfTeacher }}
-            </label>
-            <label>
-                {{ form.cost }}
-            </label>
-            <label>
-                {{ form.numOfLessons }}
-            </label>
-            <input type="submit" value="Отправить">
-            </form>
-            </div>
-
-    {% endif %}
+        {{ form.as_p }}
 
 
-{% endblock %}
+        {% if form_2 %}
+        <h3>Ingredients</h3>
+        {{ form_2.as_p }}
+        {% endif %}
+        <button style='margin-top:10px;' type='submit' >Save</button>
+    </form>
+</div>
+{% endblock content %}

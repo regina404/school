@@ -1,12 +1,14 @@
 from django.db.models import Count
-
+from fractions import Fraction
+from typing import List
+from pint import UnitRegistry
 from .models import *
 
 menu = [{'title': "О школе", 'url_name': 'about'},
         {'title': "Добавить урок", 'url_name': 'add_page'},
         {'title': "Калькуляторы", 'url_name': 'calculators'},
         {'title': "Стать репетитором", 'url_name': 'become_tutor'},
-        {'title': "Для учителя", 'url_name': 'for_teacher'},
+
 ]
 
 class DataMixin:
@@ -26,3 +28,4 @@ class DataMixin:
         if 'cat_selected' not in context:
             context['cat_selected'] = 0
         return context
+

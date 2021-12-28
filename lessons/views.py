@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
 from django.core.paginator import Paginator
 from django.http import HttpResponse, HttpResponseNotFound, Http404, HttpResponseRedirect
-from django.shortcuts import render, redirect, get_object_or_404
+
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
@@ -12,8 +12,9 @@ from django.views import View
 from .forms import *
 from .models import *
 from .utils import *
-from django.shortcuts import render
+from django.shortcuts import redirect, render, get_object_or_404
 from .forms import ContactForm
+from django.forms.models import  modelformset_factory
 
 
 class LessonsHome(DataMixin, ListView):
@@ -61,19 +62,6 @@ def become_tutor(request):
             submitted = True
     return render(request, 'lessons/become_tutor.html', {'form':form, 'submitted':submitted, 'menu': menu, 'title': 'Стать репетитором'})
 
-
-def for_teacher(request):
-    submitted = False
-    if request.method == "POST":
-        form = forTeachers(request.POST)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect('/for_teacher?submitted=True')
-    else:
-        form = forTeachers
-        if 'submitted' in request.GET:
-            submitted = True
-    return render(request, 'lessons/for_teacher.html', {'form':form, 'submitted':submitted, 'menu': menu, 'title': 'Для учителя'})
 
 
 class AddPage(LoginRequiredMixin, PermissionRequiredMixin, DataMixin, CreateView):
@@ -166,4 +154,5 @@ class LoginUser(DataMixin, LoginView):
 def logout_user(request):
     logout(request)
     return redirect('login')
+
 

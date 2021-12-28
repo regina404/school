@@ -1,6 +1,12 @@
 from django.contrib.auth.models import User
 from django.db import models
+from django.utils.html import escape, mark_safe
+
+from django.conf import settings
+from django.db import models
+from django.db.models import Q
 from django.urls import reverse
+
 
 class Lessons(models.Model):
     title = models.CharField(max_length=255, verbose_name="Заголовок")
@@ -55,16 +61,7 @@ class UserDataAdd(models.Model):
     def __str__(self):
         return self.name
 
-class teacherExcel(models.Model):
-    nameOfTeacher = models.CharField(max_length=255, verbose_name="Ваше Имя")
-    nameOfStudent = models.CharField(max_length=255,verbose_name="Имя ученика")
-    emeilOfTeacher = models.EmailField(max_length=255, verbose_name="Ваша почта")
-    cost = models.BigIntegerField( verbose_name="Стоимость занятия за 45 мин")
-    numOfLessons = models.BigIntegerField(verbose_name="Количество уроков")
 
-    class Meta:
-        verbose_name = 'Данные по детям'
-        verbose_name_plural = 'Данные с формы'
 
-    def __str__(self):
-        return self.name
+
+
