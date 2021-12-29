@@ -35,7 +35,7 @@ const equal = () => {
         return;
     }
     if (exp) {
-        input.textContent = exp;
+        input.textContent = eval(exp);
     }
 }
 const percent = () => {
@@ -70,7 +70,7 @@ const factorial = (n) => {
     return (n != 1) ? n * factorial(n - 1) : 1;
 }
 const fact = () => {
-    input.textContent = factorial(input.textContent);
+    input.textContent = factorial(+eval(input.textContent));
 }
 //Тригонометрия 
 const operation2 = (name1) => {

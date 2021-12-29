@@ -39,7 +39,7 @@ const activateTimer = (time) => {
             timerBox.innerHTML = "<b>00:00</b>"
             setTimeout(()=>{
                 clearInterval(timer)
-                alert('Time over')
+                alert('Время закончено!')
                 sendData()
             }, 500)
         }
@@ -75,11 +75,11 @@ $.ajax({
 
     },
     error: function(error){
+
     }
 })
 
 const quizForm = document.getElementById('quiz-form')
-const timeOut = document.getElementById('timer-box')
 const csrf = document.getElementsByName('csrfmiddlewaretoken')
 
 const sendData = () => {
@@ -102,9 +102,11 @@ const sendData = () => {
         data: data,
         success: function(response){
             const results = response.results
+            console.log(results)
             quizForm.classList.add('not-visible')
-            timeOut.classList.add('not-visible')
-            scoreBox.innerHTML = `${response.passed ? 'Congratulations! ' : 'Ups..:( '}Your result is ${response.score.toFixed(2)}%`
+            timerBox.classList.add('not-visible')
+            scoreBox.innerHTML = `${response.passed ? 'Поздравляем! ' : 'О..:( '}Твой результат ${response.score.toFixed(2)}%`
+
             results.forEach(res=>{
                 const resDiv = document.createElement("div")
                 for (const [question, resp] of Object.entries(res)){
@@ -126,8 +128,8 @@ const sendData = () => {
                             resDiv.innerHTML += ` answered: ${answer}`
                         } else {
                             resDiv.classList.add('bg-danger')
-                            resDiv.innerHTML += ` | correct answer: ${correct}`
-                            resDiv.innerHTML += ` | answered: ${answer}`
+                            resDiv.innerHTML += ` | Правильный ответ: ${correct}`
+                            resDiv.innerHTML += ` | Ответ: ${answer}`
                         }
                     }
                 }
@@ -135,6 +137,7 @@ const sendData = () => {
             })
         },
         error: function(error){
+            console.log(error)
         }
     })
 }

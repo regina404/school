@@ -4,6 +4,7 @@ from typing import List
 from pint import UnitRegistry
 from .models import *
 
+
 menu = [{'title': "О школе", 'url_name': 'about'},
         {'title': "Добавить урок", 'url_name': 'add_page'},
         {'title': "Калькуляторы", 'url_name': 'calculators'},
