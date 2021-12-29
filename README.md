@@ -43,7 +43,33 @@
     - views.py
 
    - media
-     - photo   
+     - photo 
+       
+   - lessons    
+     - __init__.py
+     - _pycache__
+     - admin.py
+     - apps.py
+     - forms.py
+     - migrations
+     - models.py
+     - permissions.py
+     - static 
+         - lessons
+         - css
+         - js
+         - images
+     - templates (html)   
+        - lessons
+     - templatetags  
+        - lessons_tags.py
+     - tests.py      
+     - urls.py
+     - utils.py
+     - views.py
+
+    - media
+      - photo   
   
 
   - db.sqlite3
