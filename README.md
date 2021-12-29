@@ -33,8 +33,13 @@
          - css
          - js
          - images
+       - quizes
+         - css
+         - js
+         - images
     - templates (html)   
       - lessons
+      - quizes
     - templatetags  
         - lessons_tags.py
     - tests.py      
@@ -45,7 +50,19 @@
    - media
      - photo 
        
-   - lessons    
+   - quizes    
+     - __init__.py
+     - _pycache__
+     - admin.py
+     - apps.py
+     - forms.py
+     - migrations
+     - models.py    
+     - urls.py
+     - utils.py
+     - views.py
+
+   - questions    
      - __init__.py
      - _pycache__
      - admin.py
@@ -53,24 +70,22 @@
      - forms.py
      - migrations
      - models.py
-     - permissions.py
-     - static 
-         - lessons
-         - css
-         - js
-         - images
-     - templates (html)   
-        - lessons
-     - templatetags  
-        - lessons_tags.py
-     - tests.py      
+     - permissions.py   
      - urls.py
      - utils.py
      - views.py
 
-    - media
-      - photo   
-  
+   - lessons    
+     - __init__.py
+     - _pycache__
+     - admin.py
+     - apps.py
+     - forms.py
+     - migrations
+     - models.py  
+     - urls.py
+     - utils.py
+     - views.py
 
   - db.sqlite3
 
