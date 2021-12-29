@@ -75,7 +75,7 @@
      - utils.py
      - views.py
 
-   - lessons    
+   - results    
      - __init__.py
      - _pycache__
      - admin.py
